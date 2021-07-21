@@ -1,13 +1,13 @@
 <?php
 
-$conn = mysql_connect('dbserver','dbuser','dbpass');
-mysql_select_db('dbname',$conn);
+$conn = mysql_connect('10.55.82.59','root','nutanix/4u');
+mysql_select_db('mysql',$conn);
 
 if (!mysql_ping ($conn)) {
    //here is the major trick, you have to close the connection (even though its not currently working) for it to recreate properly.
    mysql_close($conn);
-   $conn = mysql_connect('dbserver','dbuser','dbpass');
-   mysql_select_db('dbname',$conn);
+   $conn = mysql_connect('10.55.82.59','root','nutanix/4u');
+   mysql_select_db('mysql',$conn);
 }
 
 $consulta = sprintf("SELECT * FROM db");
