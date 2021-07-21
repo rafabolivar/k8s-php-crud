@@ -1,27 +1,49 @@
-<?php
+ <?php
+    $cons_usuario="root";
+    $cons_contra="nutanix/4u";
+    $cons_base_datos="mysql";
+    $cons_equipo="10.55.82.59";
+    
+    $obj_conexion = 
+    mysqli_connect($cons_equipo,$cons_usuario,$cons_contra,$cons_base_datos);
+    if(!$obj_conexion)
+    {
+        echo "<h3>No se ha podido conectar PHP - MySQL, verifique sus datos.</h3><hr><br>";
+    }
+    else
+    {
+        echo "<h3>Conexion Exitosa PHP - MySQL</h3><hr><br>";
+    }
+    
+    /* ejemplo de una consulta */
 
-$conn = mysql_connect('10.55.82.59','root','nutanix/4u');
-mysql_select_db('mysql',$conn);
+    $var_consulta= "select * from db";
+    $var_resultado = $obj_conexion->query($var_consulta);
 
-if (!mysql_ping ($conn)) {
-   //here is the major trick, you have to close the connection (even though its not currently working) for it to recreate properly.
-   mysql_close($conn);
-   $conn = mysql_connect('10.55.82.59','root','nutanix/4u');
-   mysql_select_db('mysql',$conn);
-}
+    if($var_resultado->num_rows>0)
+      {
+        echo"<table border='1' align='center'>
+         <tr bgcolor='#E6E6E6'>
+            <th>Campo1</th>
+            <th>Campo2</th>
+            <th>Campo3</th>
+            <th>Campo5</th>
+            <th>Campo5</th>
+        </tr>";
+    
+    while ($var_fila=$var_resultado->fetch_array())
+    {
+        echo "<tr>
+        <td>".$var_fila["campo_uno"]."</td>";
+        echo "<td>".$var_fila["campo_dos"]."</td>";
+        echo "<td>".$var_fila["campo_tres"]."</td>";
+        echo "<td>".$var_fila["campo_cuatro"]."</td>";
+        echo "<td>".$var_fila["campo_cinco"]."</td></tr>";
+     }
+    }
+    else
+      {
+        echo "No hay Registros";
+      }
 
-$consulta = sprintf("SELECT * FROM db");
-
-// Ejecutar la consulta
-
-$resultado = mysql_query($consulta);
-
-if (!$resultado) {
-    $mensaje  = 'Consulta no válida: ' . mysql_error() . "\n";
-    $mensaje .= 'Consulta completa: ' . $consulta;
-    die($mensaje);
-}
-
-mysql_free_result($resultado);
-
-?>
+    ?>
