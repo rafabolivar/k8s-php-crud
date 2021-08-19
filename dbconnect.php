@@ -14,8 +14,8 @@
         echo "<h3>Conexion Exitosa PHP - MySQL</h3><hr><br>";
     }
  
-/*
-    // ejemplo de una consulta
+
+    // ejemplo de una consulta 
 
     $var_consulta= "select * from db";
     $var_resultado = $obj_conexion->query($var_consulta);
@@ -45,6 +45,6 @@
       {
         echo "No hay Registros";
       }
-*/
+
  
     ?>
