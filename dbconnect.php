@@ -12,6 +12,8 @@
     else
     {
         echo "<h3>Conexion Exitosa PHP - MySQL</h3><hr><br>";
+    }
+
          // ejemplo de una consulta 
 
     $var_consulta= "select * from db";
@@ -30,21 +32,16 @@
     while ($var_fila=$var_resultado->fetch_array())
     {
         echo "<tr>
-        <td>".$var_fila["campo_uno"]."</td>";
-        echo "<td>".$var_fila["campo_dos"]."</td>";
-        echo "<td>".$var_fila["campo_tres"]."</td>";
-        echo "<td>".$var_fila["campo_cuatro"]."</td>";
-        echo "<td>".$var_fila["campo_cinco"]."</td></tr>";
+        <td>".$var_fila["Nombre"]."</td>";
+        echo "<td>".$var_fila["Apellido"]."</td>";
+        echo "<td>".$var_fila["DNI"]."</td>";
+        echo "<td>".$var_fila["Direccion"]."</td></tr>";
      }
     }
     else
       {
         echo "No hay Registros";
       }
-
-
-    }
- 
 
  
     ?>
