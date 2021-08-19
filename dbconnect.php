@@ -13,7 +13,8 @@
     {
         echo "<h3>Conexion Exitosa PHP - MySQL</h3><hr><br>";
     }
-    
+ 
+/*
     /* ejemplo de una consulta */
 
     $var_consulta= "select * from db";
@@ -44,5 +45,6 @@
       {
         echo "No hay Registros";
       }
-
+*/
+ 
     ?>
