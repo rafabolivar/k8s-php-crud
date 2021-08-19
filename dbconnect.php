@@ -1,7 +1,7 @@
  <?php
     $cons_usuario="nutanix";
     $cons_contra="nutanix/4u";
-    $cons_base_datos="mysql";
+    $cons_base_datos="mydb1";
     $cons_equipo="10.55.58.59";
     
     $obj_conexion = mysqli_connect($cons_equipo,$cons_usuario,$cons_contra,$cons_base_datos);
@@ -16,7 +16,7 @@
 
          // ejemplo de una consulta 
 
-    $var_consulta= "select * from db";
+    $var_consulta= "select * from ciudadano";
     $var_resultado = $obj_conexion->query($var_consulta);
 
     if($var_resultado->num_rows>0)
