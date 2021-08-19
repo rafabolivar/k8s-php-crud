@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: php
+  labels:
+    tier: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: php
+      tier: backend
+  template:
+    metadata:
+      labels:
+        app: php
+        tier: backend
+    spec:
+      volumes:
+      - name: code
+        persistentVolumeClaim:
+          claimName: code
+      containers:
+      - name: php
+        image: adytzu2007/php-fpm-mysqli:7.3.0-fpm-alpine-3 
+        volumeMounts:
+        - name: code
+          mountPath: /code
+      imagePullSecrets:
+      - name: regcred
+      initContainers:
+      - name: install
+        image: busybox
+        volumeMounts:
+        - name: code
+          mountPath: /code
+        command: ["/bin/sh", "-c"]
+        args:
+        - wget -O /code/config.php https://raw.githubusercontent.com/rafabolivar/k8s-php-crud/main/app/config.php; 
+          wget -O /code/index.php https://raw.githubusercontent.com/rafabolivar/k8s-php-crud/main/app/index.php;
+          wget -O /code/create.php https://raw.githubusercontent.com/rafabolivar/k8s-php-crud/main/app/create.php;
+          wget -O /code/delete.php https://raw.githubusercontent.com/rafabolivar/k8s-php-crud/main/app/delete.php;
+          wget -O /code/error.php https://raw.githubusercontent.com/rafabolivar/k8s-php-crud/main/app/error.php;
+          wget -O /code/read.php https://raw.githubusercontent.com/rafabolivar/k8s-php-crud/main/app/read.php;
+          wget -O /code/update.php https://raw.githubusercontent.com/rafabolivar/k8s-php-crud/main/app/update.php;
