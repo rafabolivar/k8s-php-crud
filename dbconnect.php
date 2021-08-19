@@ -32,10 +32,10 @@
     while ($var_fila=$var_resultado->fetch_array())
     {
         echo "<tr>
-        <td>".$var_fila["Nombre"]."</td>";
-        echo "<td>".$var_fila["Apellido"]."</td>";
-        echo "<td>".$var_fila["DNI"]."</td>";
-        echo "<td>".$var_fila["Direccion"]."</td></tr>";
+        <td>".$var_fila["nombre"]."</td>";
+        echo "<td>".$var_fila["apellido"]."</td>";
+        echo "<td>".$var_fila["dni"]."</td>";
+        echo "<td>".$var_fila["direccion"]."</td></tr>";
      }
     }
     else
