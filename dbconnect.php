@@ -15,7 +15,7 @@
     }
  
 /*
-    /* ejemplo de una consulta */
+    // ejemplo de una consulta
 
     $var_consulta= "select * from db";
     $var_resultado = $obj_conexion->query($var_consulta);
