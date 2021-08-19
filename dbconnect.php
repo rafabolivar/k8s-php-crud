@@ -1,6 +1,6 @@
  <?php
     $cons_usuario="root";
-    $cons_contra="nutanix/4u";
+    $cons_contra="El2k3mkw";
     $cons_base_datos="mysql";
     $cons_equipo="10.55.58.59";
     
