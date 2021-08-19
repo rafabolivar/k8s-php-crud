@@ -46,7 +46,7 @@
                                         echo "<th>#</th>";
                                         echo "<th>Name</th>";
                                         echo "<th>Address</th>";
-                                        echo "<th>ID Card</th>";
+                                        echo "<th>NIF</th>";
                                         echo "<th>Action</th>";
                                     echo "</tr>";
                                 echo "</thead>";
