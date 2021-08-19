@@ -24,11 +24,10 @@
       {
         echo"<table border='1' align='center'>
          <tr bgcolor='#E6E6E6'>
-            <th>Campo1</th>
-            <th>Campo2</th>
-            <th>Campo3</th>
-            <th>Campo5</th>
-            <th>Campo5</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>DNI</th>
+            <th>Direccion</th>
         </tr>";
     
     while ($var_fila=$var_resultado->fetch_array())
