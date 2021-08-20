@@ -15,7 +15,11 @@ NETROOT=`kubectl describe nodes | grep Internal | head -1 | awk {'print$2'} | aw
 IP_BEGIN=`echo "$NETROOT.$OFFSET_BEGIN"`
 IP_END=`echo "$NETROOT.$OFFSET_END"`
 
-cp /home/ubuntu/demo/scripts/metallb-config-orig.yaml /home/ubuntu/demo/scripts/metallb-config.yaml
-sed -i '' -e "s/IP_BEGIN/$IP_BEGIN/" /home/ubuntu/demo/scripts/metallb-config.yaml
-sed -i '' -e "s/IP_END/$IP_END/" /home/ubuntu/demo/scripts/metallb-config.yaml
+sudo cp /home/ubuntu/demo/scripts/metallb-config-orig.yaml /home/ubuntu/demo/scripts/metallb-config.yaml
+# The following 2 lines work for MAC OS-X
+# sudo sed -i '' -e "s/IP_BEGIN/$IP_BEGIN/" /home/ubuntu/demo/scripts/metallb-config.yaml
+# sudo sed -i '' -e "s/IP_END/$IP_END/" /home/ubuntu/demo/scripts/metallb-config.yaml
+sudo sed -i "s/IP_BEGIN/$IP_BEGIN/" /home/ubuntu/demo/scripts/metallb-config.yaml
+sudo sed -i "s/IP_END/$IP_END/" /home/ubuntu/demo/scripts/metallb-config.yaml
+
 kubectl apply -f /home/ubuntu/demo/scripts/metallb-config.yaml
