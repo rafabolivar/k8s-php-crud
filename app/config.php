@@ -1,7 +1,7 @@
 <?php
 /* Database credentials. Assuming you are running MySQL
 server with default setting (user 'root' with no password) */
-define('DB_SERVER', '10.58.58.59');
+define('DB_SERVER', 'IP_ADDRESS');
 define('DB_USERNAME', 'nutanix');
 define('DB_PASSWORD', 'nutanix/4u');
 define('DB_NAME', 'mydb1');
