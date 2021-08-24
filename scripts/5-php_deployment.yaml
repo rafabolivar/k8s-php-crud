@@ -43,3 +43,4 @@ spec:
           wget -O /code/error.php https://raw.githubusercontent.com/rafabolivar/k8s-php-crud/main/app/error.php;
           wget -O /code/read.php https://raw.githubusercontent.com/rafabolivar/k8s-php-crud/main/app/read.php;
           wget -O /code/update.php https://raw.githubusercontent.com/rafabolivar/k8s-php-crud/main/app/update.php;
+          wget -O /code/config.php https://raw.githubusercontent.com/rafabolivar/k8s-php-crud/main/app/config.php;
